@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Multiprocess Add-on Support</h1>
+      <p>Look up your add-on to find out it's multiprocess support. You will need your add-on guid.
+        You can find your add-on guid in one of a few places in your add-on:
+        <ul>
+          <li>In the <code>&lt;em:id&gt;</code> of <code>install.rdf</code></li>
+          <li>In the <code>id</code> of the <code>package.json</code> for a JPM add-on</li>
+        </ul>
+        You can also find it on <a href="https://addons.mozilla.org">addons.mozilla.org</a> by going to <code>Tools</code> &gt; <code>Manage My Submissions</code> &gt; select the add-on and scroll down to <code>Technical Details</code>.
+      </p>
+
+      <form class="form-inline">
+          <div class="form-group">
+            <label class="control-label" for="guid">Add-on guid</label>
+          <input type="text" placeholder="add-on guid" id="guid">
+          </div>
+          <button class="btn btn-default" type="submit">Look up</button>
+      </form>
+
+      <hr>
+
+      <div class="answer alert alert-danger" role="alert" id="nope" style="display: none">
+         <h3>Sorry</h3>
+         <p>Not a valid add-on id. That is the id of one of the applications such as Firefox or Thunderbird and not your add-on.</p>
+      </div>
+
+      <div class="answer alert alert-warning" role="alert" id="sdk" style="display: none">
+        <h3>SDK add-on</h3>
+        <p>
+            We think this add-on is SDK add-on that will break with e10s. Please
+            <a href="https://wiki.mozilla.org/Add-ons/developer/communication#1.29_Has_SDK_add-on_that_will_break_with_e10s">see this document for more</a>.
+        </p>
+      </div>
+
+      <div class="answer alert alert-warning" role="alert" id="sdk-legacy" style="display: none">
+        <h3>SDK legacy add-on</h3>
+        <p>
+            We think this add-on is SDK add-on using legacy APIs. Please
+            <a href="https://wiki.mozilla.org/Add-ons/developer/communication#2.29_Has_SDK_add-on_using_legacy_APIs">see this document for more</a>.
+        </p>
+      </div>
+
+      <div class="answer alert alert-warning" role="alert" id="sdk-high" style="display: none">
+        <h3>SDK High level add-on</h3>
+        <p>
+            We think this add-on is SDK add-on using on high level SDK APIs. Please
+            <a href="https://wiki.mozilla.org/Add-ons/developer/communication#3.29_Has_SDK_add-on_using_only_high_level_SDKs">see this document for more</a>.
+        </p>
+      </div>
+
+      <div class="answer alert alert-warning" role="alert" id="xul" style="display: none">
+        <h3>XUL or XPCOM add-on</h3>
+        <p>
+            We think this add-on is using XUL or XPCOM. Please
+            <a href="https://wiki.mozilla.org/Add-ons/developer/communication#4.29_Has_XUL_or_XPCOM_add-on">see this document for more</a>.
+        </p>
+      </div>
+
+      <div class="answer alert alert-danger" role="alert" id="notfound" style="display: none">
+        <p>
+            <h3>Not Found</h3>
+            We couldn't find your add-on id in our list of add-ons. That just means that we haven't or aren't sure of it's category for multiprocess support.
+            Your add-on might fall into the list of
+            <a href="https://wiki.mozilla.org/Add-ons/developer/communication#Developers_who_are_affected_by_the_changes">one of the following categories</a>
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js">
+    </script>
+  </body>
+</html>
