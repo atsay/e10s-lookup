@@ -47,17 +47,18 @@ form.addEventListener("submit", function(e) {
   }
 
   sha256(value).then(function(digest) {
+    let found = false;
     console.log('add-on sha is: ', digest);
     for (let x in addons) {
       let hit = addons[x].indexOf(digest);
       if (hit !== -1) {
-        console.log('found hit in: ', x);
         show(document.getElementById(x));
-        return;
+        found = true;
       }
     }
-    console.log('not found, boo.');
-    show(document.getElementById("notfound"));
+    if (!found) {
+      show(document.getElementById("notfound"));
+    }
   });
 });
 
@@ -75,3 +76,9 @@ function hideAll() {
 function show(element) {
   element.style.display = '';
 }
+
+// The data.js file can take a while on slow connections.
+var loading = document.getElementsByClassName('btn')[0];
+loading.innerHTML = 'Look up';
+loading.disabled = null;
+loading.classList.add('btn-success');

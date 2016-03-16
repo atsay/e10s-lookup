@@ -8,7 +8,7 @@
     <div class="container">
       <h1>Add-on compatibility checker</h1>
       <p>There are a lot of <a href="https://blog.mozilla.org/addons/2015/08/21/the-future-of-developing-firefox-add-ons/" target="_blank">changes</a> coming up for add-on development. In the next 12-18 months, we will transition to <a href="https://wiki.mozilla.org/WebExtensions" target="_blank">WebExtensions</a> as the standard for creating add-ons. Over the same period of time, existing methods for add-on development such as XUL/XPCOM will be deprecated. <a href="https://developer.mozilla.org/Add-ons/Working_with_multiprocess_Firefox" target="_blank">Multi-process Firefox</a> (aka Electrolysis, or e10s) is also rolling out, which means some add-on developers will have to update their add-ons more than once.</p>
-      
+
       <p>You can use the tool below to check the compatibility of your add-on as it relates to these changes, and what your options are for transitioning if you are affected. You will need your <b>add-on guid</b>, which is found in the following places:
         <ul>
           <li>In the <code>&lt;em:id&gt;</code> of <code>install.rdf</code> of your add-on</li>
@@ -22,14 +22,14 @@
             <label class="control-label" for="guid">Add-on guid</label>
           <input type="text" placeholder="add-on guid" id="guid">
           </div>
-          <button class="btn btn-success" type="submit">Look up</button>
+          <button class="btn" type="submit" disabled="">Loading...</button>
       </form>
 
       <hr>
 
       <div class="answer alert alert-danger" role="alert" id="nope" style="display: none">
          <h3>Sorry</h3>
-         <p>Not a valid add-on id. That is the id of one of the applications such as Firefox or Thunderbird and not your add-on.</p>
+         <p>Probably not a valid add-on id. That is the id of one of the applications such as Firefox or Thunderbird and not your add-on.</p>
       </div>
 
       <div class="answer alert alert-warning" role="alert" id="sdk" style="display: none">
