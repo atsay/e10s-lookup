@@ -79,6 +79,6 @@ function show(element) {
 
 // The data.js file can take a while on slow connections.
 var loading = document.getElementsByClassName('btn')[0];
-loading.innerHTML = 'Look up';
+loading.textContent = 'Look up';
 loading.disabled = null;
 loading.classList.add('btn-success');
