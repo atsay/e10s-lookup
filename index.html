@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mozilla Add-on compatibility checker</title>
   </head>
   <body>
     <div class="container">
@@ -11,19 +12,18 @@
       
       <p>You can use the tool below to check the compatibility of your add-on as it relates to these changes, and what your options are for transitioning if you are affected.</p>
 
-      <p>You will need your <b>add-on guid</b>, which is found in the following places:
-        <ul>
-          <li>In the <code>&lt;em:id&gt;</code> of <code>install.rdf</code> of your add-on</li>
-          <li>In the <code>name</code> (add an <code>@</code> prefix) or <code>id</code> of the <code>package.json</code> for an SDK add-on</li>
-          <li>On <a href="https://addons.mozilla.org" target="_blank">addons.mozilla.org</a>, go to <code>Tools</code> &gt; <code>Manage My Submissions</code> &gt; and select the add-on, then scroll down to <code>Technical Details</code></li>
-        </ul>
-        Your add-on guid should be one of the following:
-        <ul>
-          <li>an email address</li>
-          <li>an <code>@addon-name</code></li>
-          <li>a string that looks like <code>{F33233B3-EDB1-41f4-8482-917AB190E647}</code></li>
-        </ul>
-      </p>
+      <p>You will need your <b>add-on guid</b>, which is found in one of the following places:</p>
+      <ul>
+        <li>In the <code>&lt;em:id&gt;</code> of <code>install.rdf</code> of your add-on</li>
+        <li>In the <code>name</code> (add an <code>@</code> prefix) or <code>id</code> of the <code>package.json</code> for an SDK add-on</li>
+        <li>On <a href="https://addons.mozilla.org" target="_blank">addons.mozilla.org</a>, go to <code>Tools</code> &gt; <code>Manage My Submissions</code> &gt; and select the add-on, then scroll down to <code>Technical Details</code></li>
+      </ul>
+      <p>Your add-on guid should be one of the following:</p>
+      <ul>
+        <li>an email address</li>
+        <li>an <code>@addon-name</code></li>
+        <li>a string that looks like <code>{F33233B3-EDB1-41f4-8482-917AB190E647}</code></li>
+      </ul>
 
       <form class="form-inline">
           <div class="form-group">
@@ -74,8 +74,8 @@
       </div>
 
       <div class="answer alert alert-danger" role="alert" id="notfound" style="display: none">
+        <h3>Not Found</h3>
         <p>
-            <h3>Not Found</h3>
             We couldn't find your add-on id in our list of add-ons. That just means that we haven't explicitly looked it up for compatibility.
             <a class="btn btn-primary" role="button" href="https://wiki.mozilla.org/Add-ons/developer/communication#Developers_who_are_affected_by_the_changes">More Information</a>
         </p>
