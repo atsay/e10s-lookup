@@ -9,7 +9,7 @@
     <div class="container">
       <h1>Add-on compatibility checker</h1>
       <p>There are a lot of <a href="https://blog.mozilla.org/addons/2015/08/21/the-future-of-developing-firefox-add-ons/" target="_blank">changes</a> coming up in add-on development for Firefox. By the end of 2017, we will transition to <a href="https://wiki.mozilla.org/WebExtensions" target="_blank">WebExtensions</a> as the standard for creating add-ons. Over the same period of time, existing methods for add-on development such as XUL/XPCOM will be deprecated. <a href="https://developer.mozilla.org/Add-ons/Working_with_multiprocess_Firefox" target="_blank">Multi-process Firefox</a> (aka Electrolysis, or e10s) is also rolling out, which means some add-on developers will have to update their add-ons more than once.</p>
-      
+
       <p>You can use the tool below to check the compatibility of your add-on as it relates to these changes, and what your options are for transitioning if you are affected.</p>
 
       <p>You will need your <b>add-on guid</b>, which is found in one of the following places:</p>
@@ -88,5 +88,15 @@
     </div>
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75723202-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </body>
 </html>
