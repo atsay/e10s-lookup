@@ -19,7 +19,7 @@ function sha256(str) {
 function hex(buffer) {
   var hexCodes = [];
   var view = new DataView(buffer);
-  for (let i = 0; i < view.byteLength; i += 4) {
+  for (var i = 0; i < view.byteLength; i += 4) {
     // Using getUint32 reduces the number of iterations needed (we process 4 bytes each time)
     var value = view.getUint32(i);
     // toString(16) will give the hex representation of the number without padding
@@ -47,10 +47,10 @@ form.addEventListener("submit", function(e) {
   }
 
   sha256(value).then(function(digest) {
-    let found = false;
+    var found = false;
     console.log('add-on sha is: ', digest);
-    for (let x in addons) {
-      let hit = addons[x].indexOf(digest);
+    for (var x in addons) {
+      var hit = addons[x].indexOf(digest);
       if (hit !== -1) {
         show(document.getElementById(x));
         found = true;
@@ -68,13 +68,19 @@ function hide(element) {
 }
 
 function hideAll() {
-  for (let element of document.getElementsByClassName('answer')) {
-    hide(element);
+  var elements = document.querySelectorAll('.answer');
+  for (var i = 0; i < elements.length; i++) {
+    hide(elements[i]);
   }
 }
 
 function show(element) {
   element.style.display = '';
+}
+
+if ((navigator.userAgent.indexOf('Firefox/') == -1) &&
+    (navigator.userAgent.indexOf('Chrome/') == -1)) {
+  show(document.getElementById("browser-support"));
 }
 
 // The data.js file can take a while on slow connections.
