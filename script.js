@@ -40,6 +40,7 @@ form.addEventListener("submit", function(e) {
   e.preventDefault();
 
   var value = document.getElementById("guid").value;
+  value = value.replace(/^\s+|^C+$/g,'');
 
   if (nope.indexOf(value) !== -1) {
     show(document.getElementById("nope"));
