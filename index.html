@@ -3,18 +3,18 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mozilla Add-on compatibility checker</title>
+    <title>Recommended migration paths for Firefox Add-ons</title>
   </head>
   <body>
     <div class="container">
-      <h1>Add-on compatibility checker</h1>
+      <h1>Does my add-on need to be updated?</h1>
       <div id="browser-support" class="alert alert-danger" style="display: none">
         <p>Requires Firefox, Chrome or Opera. Because it uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder/encode">TextEncoder</a>.</p>
       </div>
 
-<p><a href="https://wiki.mozilla.org/WebExtensions" target="_blank">WebExtensions</a> are becoming the standard for add-on development in Firefox. At the same time, <a href="https://developer.mozilla.org/en-US/Add-ons/Working_with_multiprocess_Firefox" target="_blank">multiprocess Firefox</a> (aka Electrolysis, or e10s) is also rolling out. These changes impact developers of XUL/XPCOM and SDK add-ons (some more than others).</p>
+<p><a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions" target="_blank">WebExtensions</a> are becoming the standard for add-on development in Firefox. At the same time, <a href="https://developer.mozilla.org/en-US/Add-ons/Working_with_multiprocess_Firefox" target="_blank">multiprocess Firefox</a> (aka Electrolysis, or e10s) is also rolling out. These changes impact developers of XUL/XPCOM and SDK add-ons (some more than others).</p>
 
-      <p>Use the tool below to check the compatibility of your add-on as it relates to these changes, and <a href="https://wiki.mozilla.org/Add-ons/developer/communication" target="_blank">learn what your options are</a> for transitioning if you are affected.</p>
+      <p>The tool below will tell you which technology your add-on uses and what your options are for staying compatible. A comprehensive collection of <a href="https://wiki.mozilla.org/Add-ons/developer/communication" target="_blank">resources</a> is available to help you through the transition if you are affected.</p>
 
       <p>You will need your <b>add-on guid</b>, which is found in one of the following places:</p>
       <ul>
@@ -47,7 +47,7 @@
       <div class="answer alert alert-warning" role="alert" id="sdk" style="display: none">
         <h3>SDK add-on using low level APIs</h3>
         <p>
-            We think this is an SDK add-on that uses <a href="https://developer.mozilla.org/en-US/Add-ons/SDK/Low-Level_APIs" target="_blank">low level APIs</a> that will break with Multi-process Firefox (aka Electrolysis or e10s).
+            We think this is an SDK add-on that uses <a href="https://developer.mozilla.org/en-US/Add-ons/SDK/Low-Level_APIs" target="_blank">low level APIs</a> that will break with multiprocess Firefox (aka Electrolysis or e10s).
             <a class="btn btn-primary" href="https://wiki.mozilla.org/Add-ons/developer/communication#1.29_Has_SDK_add-on_using_low_level_APIs">More Information</a>
         </p>
       </div>
